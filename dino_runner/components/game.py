@@ -6,6 +6,7 @@ from dino_runner.utils.text_utils import draw_message_component
 from dino_runner.components.dinosaur import Dinosaur
 from dino_runner.components.obstacles.obstacle_manager import ObstacleManager
 from dino_runner.components.power_ups.power_up_manager import PowerUpManager
+from dino_runner.components.scenario.cloud import Cloud
 
 FONT_STYLE = 'freesansbold.ttf'
 
@@ -76,6 +77,8 @@ class Game:
         self.draw_score()
         self.draw_power_up_time()
         self.power_up_manager.draw(self.screen)
+        Cloud.draw(self.screen)
+
         pygame.display.update()
         pygame.display.flip()
 
@@ -141,6 +144,4 @@ class Game:
             
         pygame.display.update()
         self.handle_events_on_menu()
-
-    # implementar hammer +1 power_up - comportamentos diferentes
     # implementar mudanças à minha escolha
